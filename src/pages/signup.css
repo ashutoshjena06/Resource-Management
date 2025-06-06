@@ -1,0 +1,79 @@
+/* Background for signup page */
+.signup-bg {
+  width: 100%;
+  /* remove height: 100vh */
+  padding: 2rem 0; /* vertical padding */
+  background: linear-gradient(rgba(30, 30, 47, 0.8), rgba(30, 30, 47, 0.8)),
+              url("/images/bg.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+  
+  /* Reuse same form styling as login */
+  .auth-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .auth-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1e1e2f;
+  }
+  
+  .auth-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .auth-form input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .auth-form input:focus {
+    border-color: #1e1e2f;
+    outline: none;
+  }
+  
+  .auth-form button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #1e1e2f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-form button:hover {
+    background-color: #2e2e50;
+  }
+  
+  .newUser {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .newUser a {
+    color: #1e1e2f;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .newUser a:hover {
+    text-decoration: underline;
+  }
+  
