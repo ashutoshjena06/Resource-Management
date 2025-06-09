@@ -64,7 +64,7 @@ html, body, #root {
   transition: background-color 0.3s ease;
 }
 .me{
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .sing_in_up .btn:hover {
@@ -96,3 +96,9 @@ html, body, #root {
   background-repeat: no-repeat;
   animation: l9 2s infinite linear;
 }
+
+
+
+
+
+

@@ -5,12 +5,14 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export const UserPage = () => {
-  const [cookies, setCookies, removeCookies] = useCookies(["Email"]);
+  const [cookies, , removeCookies] = useCookies(["Email"]);
   const navigate = useNavigate();
+
   const handleLogout = () => {
     removeCookies("Email", { path: "/" });
     navigate("/api/login");
   };
+
   return (
     <div className="container-fluid">
       <div className="row flex-nowrap">
@@ -40,6 +42,15 @@ export const UserPage = () => {
               </li>
               <li className="w-100">
                 <Link
+                  to="chat"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                  <i className="fs-4 bi-chat-dots ms-2"></i>
+                  <span className="ms-2 d-none d-sm-inline">Chats</span>
+                </Link>
+              </li>
+              <li className="w-100">
+                <Link
                   to="profile"
                   className="nav-link px-0 align-middle text-white"
                 >
@@ -56,6 +67,7 @@ export const UserPage = () => {
             </ul>
           </div>
         </div>
+
         <div
           className="col py-3"
           style={{ height: "100vh", overflowY: "auto" }}

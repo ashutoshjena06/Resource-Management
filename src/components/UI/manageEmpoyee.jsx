@@ -3,8 +3,12 @@ import axios from "axios";
 import "./manageEmployee.css"; // Optional CSS
 import { EditUserForm } from "./EditUserForm";
 import { useCookies } from "react-cookie";
+import { Loader } from "../layouts/Loader";
+
+// new state
 
 export const ManageEmployee = () => {
+  const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null); // For view modal/card
   const [editUser, setEditUser] = useState(null);
@@ -16,15 +20,26 @@ export const ManageEmployee = () => {
   const isAdmin = cookies.Email === "admin@gmail.com";
 
   useEffect(() => {
+    setLoading(true); // Start loading
     axios
-      .get(`http://localhost:3000/api/getAll/${cookies.Email}`) // adjust base URL if needed
+      .get(`http://localhost:3000/api/getAll/${cookies.Email}`)
       .then((res) => {
         setUsers(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching users:", err);
+        setLoading(false); // Stop loading
       });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <Loader />
+      </div>
+    );
+  }
 
   const handleDelete = async (email) => {
     if (window.confirm("Are you sure to delete this user?")) {

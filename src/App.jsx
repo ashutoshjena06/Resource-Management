@@ -15,6 +15,8 @@ import { AdminDash } from "./components/UI/admindashboard";
 import { UserDash } from "./components/UI/userdashboard";
 import { ManageEmployee } from "./components/UI/manageEmpoyee";
 import { Category } from "./components/UI/category";
+import ChatPage from "./components/UI/ChatBox";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -62,6 +64,10 @@ const App = () => {
               path: "allusers",
               element: <ManageEmployee />,
             },
+            {
+              path: "chat",
+              element: <ChatPage />,
+            },
           ],
         },
         {
@@ -87,6 +93,10 @@ const App = () => {
             {
               path: "category",
               element: <Category />,
+            },
+            {
+              path: "chat",
+              element: <ChatPage />,
             },
           ],
         },
